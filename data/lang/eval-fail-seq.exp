@@ -1,0 +1,4 @@
+error: while calling primop seq at PWD/lang/eval-fail-seq.nix:1:1-1:29:
+while evaluating a black hole at PWD/lang/eval-fail-seq.nix:1:1-1:29:
+while calling primop abort at PWD/lang/eval-fail-seq.nix:1:15-1:26:
+evaluation aborted at PWD/lang/eval-fail-seq.nix:1:15-1:26 with the following error message: ‘foo’

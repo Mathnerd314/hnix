@@ -1,6 +1,7 @@
 { mkDerivation, ansi-wl-pprint, base, containers, data-fix, parsers
 , stdenv, tasty, tasty-hunit, tasty-th, text, transformers
 , trifecta, unordered-containers, cabal-install, criterion, pkgs
+, alex, happy
 }:
 
 let
@@ -16,6 +17,9 @@ mkDerivation {
   in filterSource (n: _: notNamed [".git" "dist" "benchmarks"] n) ./.;
   isLibrary = true;
   isExecutable = true;
+  libraryToolDepends = [
+    alex happy
+  ];
   buildDepends = [
     ansi-wl-pprint base containers data-fix parsers text transformers
     trifecta unordered-containers cabal-install criterion

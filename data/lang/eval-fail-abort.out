@@ -1,0 +1,2 @@
+error: while calling primop abort at PWD/lang/eval-fail-abort.nix:1:14-1:38:
+evaluation aborted at PWD/lang/eval-fail-abort.nix:1:14-1:38 with the following error message: ‘this should fail’

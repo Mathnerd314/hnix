@@ -1,0 +1,5 @@
+error: while evaluating the attribute ‘foo’ at PWD/lang/eval-fail-recursion.nix:1:21-1:26:
+while evaluating the value ‘a’ at PWD/lang/eval-fail-recursion.nix:1:21-1:22:
+while evaluating a black hole at PWD/lang/eval-fail-recursion.nix:1:21-1:22:
+while evaluating the value ‘a’ at PWD/lang/eval-fail-recursion.nix:1:15-1:16:
+infinite recursion encountered at PWD/lang/eval-fail-recursion.nix:1:15-1:16

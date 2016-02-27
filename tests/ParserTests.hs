@@ -7,6 +7,10 @@ import Data.Text (pack)
 import Test.Tasty
 import Test.Tasty.HUnit
 import Test.Tasty.TH
+import System.Directory
+import System.FilePath
+import Control.Monad
+import Data.List
 
 import qualified Data.Map as Map
 
@@ -323,6 +327,17 @@ case_comments = do
   Success expected <- parseNixFile "data/let.nix"
   assertParseFile "let-comments-multiline.nix" expected
   assertParseFile "let-comments.nix" expected
+
+case_nixbase :: Assertion
+case_nixbase = do
+  names <- getDirectoryContents "data/lang"
+  let files = filter ((== ".nix") . takeExtension) names
+  forM_ files $ \file -> do
+    res <- parseNixFile ("data/lang/" ++ file)
+    let shouldFail = "fail" `isInfixOf` file
+    case res of
+      Success r   -> if shouldFail then assertFailure $ "Unexpected success parsing data file `" ++ file ++ "':\nParsed value: " ++ show r else return ()
+      Failure err -> if not shouldFail then assertFailure $ "Unexpected error parsing data file `" ++ file ++ "':\n" ++ show err else return ()
 
 tests :: TestTree
 tests = $testGroupGenerator

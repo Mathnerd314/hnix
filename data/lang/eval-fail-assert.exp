@@ -1,0 +1,4 @@
+error: while evaluating the attribute ‘body’ at PWD/lang/eval-fail-assert.nix:1:1-5:2:
+while evaluating a black hole at PWD/lang/eval-fail-assert.nix:1:1-5:2:
+while calling ‘x’ at PWD/lang/eval-fail-assert.nix:2:7-2:34 from PWD/lang/eval-fail-assert.nix:4:10-4:15:
+assertion failed at PWD/lang/eval-fail-assert.nix:2:12-2:34

@@ -1,0 +1,7 @@
+error: while evaluating the attribute ‘body’ at PWD/lang/eval-fail-scope-5.nix:1:1-10:2:
+while evaluating a black hole at PWD/lang/eval-fail-scope-5.nix:1:1-10:2:
+while calling ‘f’ at PWD/lang/eval-fail-scope-5.nix:6:7-6:28 from PWD/lang/eval-fail-scope-5.nix:8:10-8:14:
+while evaluating the value ‘x’ at PWD/lang/eval-fail-scope-5.nix:6:23-6:24:
+while evaluating a black hole at PWD/lang/eval-fail-scope-5.nix:6:23-6:24:
+while evaluating the value ‘y’ at PWD/lang/eval-fail-scope-5.nix:6:12-6:13:
+infinite recursion encountered at PWD/lang/eval-fail-scope-5.nix:6:12-6:13

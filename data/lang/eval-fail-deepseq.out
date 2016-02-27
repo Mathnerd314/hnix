@@ -1,0 +1,5 @@
+error: while calling primop deepSeq at PWD/lang/eval-fail-deepseq.nix:1:1-1:42:
+while evaluating the attribute ‘x’ at PWD/lang/eval-fail-deepseq.nix:1:20-1:21:
+while evaluating a black hole at PWD/lang/eval-fail-deepseq.nix:1:1-1:42:
+while calling primop abort at PWD/lang/eval-fail-deepseq.nix:1:24-1:35:
+evaluation aborted at PWD/lang/eval-fail-deepseq.nix:1:24-1:35 with the following error message: ‘foo’

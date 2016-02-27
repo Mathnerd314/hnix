@@ -1,0 +1,1 @@
+error: anonymous function at PWD/lang/eval-fail-missing-arg.nix:1:2-1:22 called without required argument ‘y’ at PWD/lang/eval-fail-missing-arg.nix:1:1-1:47

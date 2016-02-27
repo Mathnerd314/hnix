@@ -62,6 +62,8 @@ data NExprF r
   -- ^ Apply a function to an argument.
   | NLet ![Binding r] !r
   -- ^ Evaluate the second argument after introducing the bindings.
+  | NLetSet ![Binding r]
+  -- ^ Evaluate the 'body' binding after introducing the bindings.
   | NIf !r !r !r
   -- ^ If-then-else statement.
   | NWith !r !r

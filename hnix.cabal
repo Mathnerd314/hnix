@@ -15,13 +15,13 @@ Homepage:            http://github.com/jwiegley/hnix
 
 Extra-source-files: data/*.nix
 
-Flag Parsec
-  Description: Use parsec instead of Trifecta
-  Default: False
-
-Library
+Test-suite hnix-tests
+  Type: exitcode-stdio-1.0
+  Hs-source-dirs: . tests
   Default-language: Haskell2010
-  Exposed-modules:
+  Main-is: Main.hs
+  Other-modules:
+    ParserTests
     Nix.Atoms
     Nix.Eval
     Nix.Parser
@@ -29,7 +29,6 @@ Library
     Nix.Pretty
     Nix.Parser.Operators
     Nix.StringOperations
-  Other-modules:
     Nix.Parser.Library
     Nix.Expr.Types
     Nix.Expr.Shorthands
@@ -53,77 +52,19 @@ Library
       base                     >= 4.6          && < 5
     , ansi-wl-pprint
     , containers
+    , directory
+    , filepath
     , text
     , transformers
     , parsers >= 0.10
     , unordered-containers
     , data-fix
-    , deepseq
-  if flag(parsec)
-    Cpp-options: -DUSE_PARSEC
-    Build-depends: parsec
-  else
-    Build-depends: trifecta
-  ghc-options: -Wall -fno-warn-name-shadowing
-
-Executable hnix
-  Default-language: Haskell2010
-  Main-is: Main.hs
-  Hs-source-dirs: main
-  Default-extensions:
-    DataKinds
-    DeriveDataTypeable
-    DeriveFunctor
-    DeriveGeneric
-    FlexibleContexts
-    FlexibleInstances
-    GADTs
-    KindSignatures
-    LambdaCase
-    MultiWayIf
-    OverloadedStrings
-    PatternGuards
-    RankNTypes
-    TupleSections
-  Build-depends:
-      base                     >= 4.3          && < 5
-    , hnix
-    , containers
-    , ansi-wl-pprint
-    , data-fix
-    , deepseq
-  Ghc-options: -Wall
-
-Test-suite hnix-tests
-  Type: exitcode-stdio-1.0
-  Hs-source-dirs: tests
-  Default-language: Haskell2010
-  Main-is: Main.hs
-  Other-modules:
-    ParserTests
-  Build-depends:
-      base >= 4.3 && < 5
-    , containers
-    , text
-    , data-fix
-    , hnix
     , tasty
     , tasty-th
     , tasty-hunit
-
-Benchmark hnix-benchmarks
-  Type: exitcode-stdio-1.0
-  Hs-source-dirs: benchmarks
-  Default-language: Haskell2010
-  Main-is: Main.hs
-  Other-modules:
-    ParserBench
-  Build-depends:
-      base >= 4.3 && < 5
-    , containers
-    , text
-    , hnix
-    , criterion
+    , deepseq
+  Build-tools: alex, happy
+  ghc-options: -Wall
 
 source-repository head
   type:     git
